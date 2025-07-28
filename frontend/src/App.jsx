@@ -4,7 +4,8 @@ import './App.css';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import TileLayer from 'ol/layer/Tile';
-import BingMaps from 'ol/source/BingMaps';
+import XYZ from 'ol/source/XYZ';
+import { fromLonLat } from 'ol/proj';
 
 function App() {
   useEffect(() => {
@@ -12,14 +13,15 @@ function App() {
       target: 'map',
       layers: [
         new TileLayer({
-          source: new BingMaps({
-            key: import.meta.env.VITE_BING_MAPS_KEY,
-            imagerySet: 'AerialWithLabelsOnDemand', // good for seeing UNC buildings
+          source: new XYZ({
+            url: `https://api.maptiler.com/maps/satellite/{z}/{x}/{y}.jpg?key=${import.meta.env.VITE_MAPTILER_KEY}`,
+            tileSize: 512,
+            crossOrigin: 'anonymous',
           }),
         }),
       ],
       view: new View({
-        center: [-8800000, 4430000], // Approximate UNC-Chapel Hill location in Web Mercator
+        center: fromLonLat([-79.0469, 35.9101]),
         zoom: 17,
       }),
     });
@@ -29,3 +31,4 @@ function App() {
 }
 
 export default App;
+
