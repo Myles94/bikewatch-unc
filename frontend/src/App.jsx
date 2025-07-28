@@ -1,35 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import 'ol/ol.css';
+import './App.css';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import BingMaps from 'ol/source/BingMaps';
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    new Map({
+      target: 'map',
+      layers: [
+        new TileLayer({
+          source: new BingMaps({
+            key: import.meta.env.VITE_BING_MAPS_KEY,
+            imagerySet: 'AerialWithLabelsOnDemand', // good for seeing UNC buildings
+          }),
+        }),
+      ],
+      view: new View({
+        center: [-8800000, 4430000], // Approximate UNC-Chapel Hill location in Web Mercator
+        zoom: 17,
+      }),
+    });
+  }, []);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  return <div id="map" style={{ width: '100vw', height: '100vh' }} />;
 }
 
-export default App
+export default App;
