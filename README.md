@@ -21,6 +21,4 @@ BikeWatch is a web app designed to help students and community members track and
 3. Run the FastAPI backend server  
 4. Connect to Supabase database  
 
-## Contact
 
-For questions or collaboration, contact [Your Name] at [your email].
