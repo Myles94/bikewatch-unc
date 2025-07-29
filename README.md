@@ -1,25 +1,26 @@
-BikeWatch UNC
+# BikeWatch UNC
+
 BikeWatch is a web app designed to help students and community members track and report bike availability and safety on the UNC campus. The platform provides real-time updates on bike locations, maintenance issues, and theft alerts to improve campus bike security and accessibility.
 
-Features
-Real-time bike tracking and status updates
+## Features
 
-User-friendly interface for reporting bike issues
+- Real-time bike tracking and status updates  
+- User-friendly interface for reporting bike issues  
+- Notifications for bike thefts or maintenance needs
 
-Notifications for bike thefts or maintenance needs
+## Tech Stack
 
-Tech Stack
-Backend: FastAPI
+- Backend: FastAPI  
+- Database: Supabase  
+- Frontend: *(Add your frontend tech here)*
 
-Database: Supabase
+## Getting Started
 
-Frontend: (Add your frontend tech here)
+1. Clone the repo  
+2. Install dependencies  
+3. Run the FastAPI backend server  
+4. Connect to Supabase database  
 
-Getting Started
-Clone the repo
+## Contact
 
-Install dependencies
-
-Run the FastAPI backend server
-
-Connect to Supabase database
+For questions or collaboration, contact [Your Name] at [your email].
