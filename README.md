@@ -12,7 +12,7 @@ BikeWatch is a web app designed to help students and community members track and
 
 - Backend: FastAPI  
 - Database: Supabase  
-- Frontend: *(Add your frontend tech here)*
+- Frontend: React
 
 ## Getting Started
 
