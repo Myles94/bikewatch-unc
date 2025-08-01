@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Query
-from models import Sighting
-from database import supabase
+from ..models import Sighting
+from ..database import supabase
 
 router = APIRouter()
 

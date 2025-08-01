@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from routes import report, sightings, feedback
+from .routes import report, sightings, feedback
+
 
 app = FastAPI()
 
